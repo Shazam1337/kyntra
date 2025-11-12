@@ -1,0 +1,67 @@
+.live-feed-container {
+  width: 100%;
+  height: auto;
+  transition: height 0.3s ease;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.live-feed-title {
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.feed-item {
+  font-family: 'Space Mono', 'IBM Plex Mono', monospace;
+  color: #00E0FF;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  padding: 2px 0;
+}
+
+.feed-item:hover {
+  color: #00FFFF;
+  cursor: pointer;
+  transform: translateX(2px);
+}
+
+.feed-item.new {
+  animation: flash 0.4s ease-in-out;
+}
+
+.feed-user {
+  color: #00E0FF;
+  font-weight: 400;
+}
+
+.feed-action {
+  color: #E5E7EB;
+  opacity: 0.9;
+}
+
+.feed-item .amount {
+  color: #CCFF00;
+  font-weight: 600;
+  margin-left: 6px;
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+}
+
+@keyframes flash {
+  from {
+    color: #fff;
+    text-shadow: 0 0 4px #00E0FF;
+  }
+  to {
+    color: #00E0FF;
+    text-shadow: none;
+  }
+}
+

@@ -1,0 +1,88 @@
+.pending-verifications {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: clamp(18px, 2vw, 22px);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  color: var(--text-primary);
+  font-family: 'Space Mono', 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+}
+
+.pending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.pending-item {
+  padding: calc(var(--spacing-unit) * 3);
+  background: transparent;
+  border: 1px solid var(--grid-color);
+  border-radius: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pending-item:hover {
+  border-color: var(--accent-primary);
+  background: rgba(0, 224, 255, 0.02);
+}
+
+.pending-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pending-username {
+  font-weight: 400;
+  color: var(--accent-primary);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.pending-status {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.verified-badge {
+  font-size: 11px;
+  color: var(--accent-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.pending-message {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 2px;
+  background: var(--grid-color);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 0;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+}
+

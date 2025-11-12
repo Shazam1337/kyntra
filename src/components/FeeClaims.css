@@ -1,0 +1,61 @@
+.fee-claims {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: clamp(18px, 2vw, 22px);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  color: var(--text-primary);
+  font-family: 'Space Mono', 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+}
+
+.fee-info {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.fee-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--spacing-unit) * 3);
+  background: transparent;
+  border: 1px solid var(--grid-color);
+  border-radius: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fee-item:hover {
+  border-color: var(--accent-primary);
+  background: rgba(0, 224, 255, 0.02);
+}
+
+.fee-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.fee-value {
+  font-size: 16px;
+  color: var(--accent-primary);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.fee-value.positive {
+  color: var(--accent-secondary);
+}
+
+.explorer-button {
+  width: 100%;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+

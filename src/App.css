@@ -1,0 +1,135 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.main-content {
+  padding-top: 80px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 0.4fr 1px 1fr 1fr; /* Essence (40%) | Divider | Center (30%) | Right (30%) */
+  gap: calc(var(--spacing-unit) * 4);
+  animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 1600px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.essence-section {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.content-divider {
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 224, 255, 0.1),
+    rgba(0, 224, 255, 0.4),
+    rgba(0, 224, 255, 0.1),
+    transparent
+  );
+  animation: dividerPulse 3s ease-in-out infinite;
+  opacity: 0.1;
+}
+
+.content-divider:hover {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.dashboard-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Центральный блок | Правый блок */
+  grid-template-rows: auto 1fr; /* Метрики сверху | Контент */
+  gap: calc(var(--spacing-unit) * 4);
+}
+
+.top-metrics-section {
+  grid-column: 1 / -1; /* Растягиваем на всю ширину */
+  width: 100%;
+  margin-top: calc(var(--spacing-unit) * 4);
+}
+
+.center-section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 4);
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 4);
+}
+
+@keyframes dividerPulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.left-column,
+.center-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 4);
+}
+
+@media (max-width: 1200px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: calc(var(--spacing-unit) * 4);
+  }
+
+  .essence-section {
+    position: static;
+    margin-bottom: calc(var(--spacing-unit) * 4);
+  }
+
+  .content-divider {
+    display: none;
+  }
+
+  .dashboard-section {
+    grid-template-columns: 1fr;
+  }
+
+  .center-section,
+  .right-section {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: calc(var(--spacing-unit) * 12) calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 4);
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: calc(var(--spacing-unit) * 4);
+  }
+
+  .left-section,
+  .right-section {
+    grid-column: 1;
+  }
+}
+
