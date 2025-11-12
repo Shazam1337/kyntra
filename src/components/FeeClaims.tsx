@@ -6,7 +6,7 @@ const random = (min: number, max: number) => {
 }
 
 const FeeClaims = () => {
-  const timeoutsRef = useRef<NodeJS.Timeout[]>([])
+  const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([])
   const [creatorFees, setCreatorFees] = useState(0.025238)
   const [lastTransfer, setLastTransfer] = useState(0.013559)
 

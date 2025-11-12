@@ -13,7 +13,7 @@ const random = (min: number, max: number) => {
 }
 
 const Leaderboard = () => {
-  const timeoutsRef = useRef<NodeJS.Timeout[]>([])
+  const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([])
   const [leaders, setLeaders] = useState<Leader[]>(() => {
     // Начальные значения: посты от 3 до 12, earned уменьшено в 100 раз
     return [

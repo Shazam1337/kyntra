@@ -68,7 +68,7 @@ const initialMetrics: Metric[] = [
 ]
 
 const TopMetrics = () => {
-  const timeoutsRef = useRef<NodeJS.Timeout[]>([])
+  const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([])
   const [metrics, setMetrics] = useState<Metric[]>(initialMetrics)
 
   useEffect(() => {

@@ -36,8 +36,7 @@ const AnimatedBackground = () => {
     const animate = () => {
       time += 0.005
       
-      // Clear with subtle breathing effect
-      const breath = 1 + Math.sin(time * 0.5) * 0.01 // 101-103% zoom
+      // Clear canvas
       ctx.fillStyle = '#000000'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
